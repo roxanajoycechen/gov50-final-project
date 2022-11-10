@@ -20,5 +20,100 @@ library(broom)
 library(ggplot2)
 library(modelr)
 
+#Loading and joining data
+ldi <- read_csv("Kyrgyzstan.csv")
+gdp_growth <- read_csv("wbdatacleaned.csv")
+kyrgyz <- ldi |>
+ left_join(gdp_growth)
+
+#Visualization of GDP growth over time
+gdp_growth_graph <- 
+  ggplot(data = kyrgyz, 
+          mapping = aes(x = `Year`, 
+                        y = `GDP growth (annual %)`)) +
+  geom_line() +
+  labs(x = "Year", 
+       y = "GDP growth (Annual %)", 
+       title = "Annual GDP Growth in Kyrgyzstan, 1991-2021")
+gdp_growth_graph
+
+#Visualization of LDI over time
+ldi_graph <- 
+  ggplot(data = kyrgyz, 
+          mapping = aes(x = `Year`, 
+                        y = `Liberal Democracy Index`)) +
+  geom_line() +
+  labs(x = "Year", 
+       y = "Liberal Democracy Index Score", 
+       title = "Liberal Democracy Index Score in Kyrgyzstan, 1991-2021")
+ldi_graph
+
+#Linear regression 
+regression <- lm(`Liberal Democracy Index` ~ `GDP growth (annual %)`, 
+                 data = kyrgyz)
+regression
+summary(regression)
+
+#Coefficients
+coef(regression)
+
+#Graphing regression
+ggplot(regression, aes(x = `GDP growth (annual %)`, 
+                       y = `Liberal Democracy Index`)) + 
+  geom_point(color = "steelblue1") + 
+  labs(x = "GDP growth (Annual %)", 
+       y = "Liberal Democracy Index", 
+       title = "Liberal Democracy Index vs. Annual GDP Growth in Kyrgyzstan,
+       1991-2021" ) +
+#geom vline, hline
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "indianred1", 
+              size = 1.5)
 ```
 
+ (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting
+
+```{r}
+
+```
+
+ 
+ (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).
+ 
+```{r}
+#not causal; association. observing relationship
+```
+ 
+ (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect. 
+ 
+```{r}
+
+#LDI and GDP alone
+#if LDI 0, gdp would be.
+#if GDP growth 1 pp increase, LDI 
+#On average, LDI increases by x if GDP growth rate increases by 1 percentage point [contingent on holding [[other variable]]] fixed
+
+#statistically significant.
+
+#Regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). 
+#interpretations of coefficient
+#does association go away?
+#is it still significant?
+  
+#run a separate regression with revolution
+
+```
+ 
+ (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).
+ 
+```{r}
+#Results Summary
+#Hypothesis Support
+#Limitations and Threats
+#Improvements
+
+#is positive assoc, but can it be explained by other things - if put other variables in, does association go away?
+```
+ 
+ 

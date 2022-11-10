@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-1-2.png","index_files/figure-html5/unnamed-chunk-1-3.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","Kyrgyzstan.csv","wbdatacleaned.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1524,10 +1524,146 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelr.tidyverse.org'>modelr</a></span><span class='op'>)</span></span></code></pre>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelr.tidyverse.org'>modelr</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>#Loading and joining data</span></span>
+<span><span class='va'>ldi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Kyrgyzstan.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>gdp_growth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"wbdatacleaned.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>ldi</span> <span class='op'>|&gt;</span></span>
+<span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>#Visualization of GDP growth over time</span></span>
+<span><span class='va'>gdp_growth_graph</span> <span class='op'>&lt;-</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>kyrgyz</span>, </span>
+<span>          mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year`</span>, </span>
+<span>                        y <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
+<span>       title <span class='op'>=</span> <span class='st'>"Annual GDP Growth in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
+<span><span class='va'>gdp_growth_graph</span></span></code></pre>
+</div>
+<img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of LDI over time</span></span>
+<span><span class='va'>ldi_graph</span> <span class='op'>&lt;-</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>kyrgyz</span>, </span>
+<span>          mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year`</span>, </span>
+<span>                        y <span class='op'>=</span> <span class='va'>`Liberal Democracy Index`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index Score"</span>, </span>
+<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index Score in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
+<span><span class='va'>ldi_graph</span></span></code></pre>
+</div>
+<img src="index_files/figure-html5/unnamed-chunk-1-2.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Linear regression </span></span>
+<span><span class='va'>regression</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP growth (annual %)`</span>, </span>
+<span>                 data <span class='op'>=</span> <span class='va'>kyrgyz</span><span class='op'>)</span></span>
+<span><span class='va'>regression</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = `Liberal Democracy Index` ~ `GDP growth (annual %)`, 
+    data = kyrgyz)
+
+Coefficients:
+            (Intercept)  `GDP growth (annual %)`  
+              0.2240133                0.0009581  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>regression</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = `Liberal Democracy Index` ~ `GDP growth (annual %)`, 
+    data = kyrgyz)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.07206 -0.06090 -0.04299  0.08549  0.11339 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             0.2240133  0.0131379  17.051   &lt;2e-16 ***
+`GDP growth (annual %)` 0.0009581  0.0017450   0.549    0.587    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.07181 on 29 degrees of freedom
+Multiple R-squared:  0.01029,   Adjusted R-squared:  -0.02384 
+F-statistic: 0.3015 on 1 and 29 DF,  p-value: 0.5872</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Coefficients</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coef</a></span><span class='op'>(</span><span class='va'>regression</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>            (Intercept) `GDP growth (annual %)` 
+           0.2240133360            0.0009581068 </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Graphing regression</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>regression</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span>, </span>
+<span>                       y <span class='op'>=</span> <span class='va'>`Liberal Democracy Index`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"steelblue1"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index"</span>, </span>
+<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index vs. Annual GDP Growth in Kyrgyzstan,</span></span>
+<span><span class='st'>       1991-2021"</span> <span class='op'>)</span> <span class='op'>+</span></span>
+<span><span class='co'>#geom vline, hline</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, </span>
+<span>              se <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span>              color <span class='op'>=</span> <span class='st'>"indianred1"</span>, </span>
+<span>              size <span class='op'>=</span> <span class='fl'>1.5</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-1-3.png" width="624" /></p>
+</div>
+<ol type="1">
+<li>an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<ol start="2" type="1">
+<li>a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#not causal; association. observing relationship</span></span></code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<ol start="3" type="1">
+<li>a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#LDI and GDP alone</span></span>
+<span><span class='co'>#if LDI 0, gdp would be.</span></span>
+<span><span class='co'>#if GDP growth 1 pp increase, LDI </span></span>
+<span><span class='co'>#On average, LDI increases by x if GDP growth rate increases by 1 percentage point [contingent on holding [[other variable]]] fixed</span></span>
+<span></span>
+<span><span class='co'>#statistically significant.</span></span>
+<span></span>
+<span><span class='co'>#Regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). </span></span>
+<span><span class='co'>#interpretations of coefficient</span></span>
+<span><span class='co'>#does association go away?</span></span>
+<span><span class='co'>#is it still significant?</span></span>
+<span>  </span>
+<span><span class='co'>#run a separate regression with revolution</span></span></code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Results Summary</span></span>
+<span><span class='co'>#Hypothesis Support</span></span>
+<span><span class='co'>#Limitations and Threats</span></span>
+<span><span class='co'>#Improvements</span></span>
+<span></span>
+<span><span class='co'>#is positive assoc, but can it be explained by other things - if put other variables in, does association go away?</span></span></code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
