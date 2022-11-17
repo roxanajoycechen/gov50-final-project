@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-1-2.png","index_files/figure-html5/unnamed-chunk-1-3.png","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-2-2.png","index_files/figure-html5/unnamed-chunk-2-3.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","Kyrgyzstan.csv","wbdatacleaned.csv"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-1-2.png","index_files/figure-html5/unnamed-chunk-1-3.png","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-2-2.png","index_files/figure-html5/unnamed-chunk-2-3.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-3-2.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","Kyrgyzstan.csv","wbdatacleaned.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1517,8 +1517,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>Does GDP growth facilitate democratization? In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a>. My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing <a href="https://www.v-dem.net/data_analysis/CountryGraph/">Kyrgyzstan’s annual Liberal Democracy Index (LDI)</a>. The LDI is measured one a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1533,9 +1531,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='va'>ldi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Kyrgyzstan.csv"</span><span class='op'>)</span></span>
 <span><span class='va'>gdp_growth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"wbdatacleaned.csv"</span><span class='op'>)</span></span>
 <span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>ldi</span> <span class='op'>|&gt;</span></span>
-<span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='co'>#Visualization of GDP growth over time</span></span>
+<span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p><em>(1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</em></p>
+<p>Does GDP growth facilitate democratization? In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a>. My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing <a href="https://www.v-dem.net/data_analysis/CountryGraph/">Kyrgyzstan’s annual Liberal Democracy Index (LDI)</a>. The LDI is measured on a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.</p>
+<p><em>(2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</em></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of GDP growth (independent variable) over time</span></span>
 <span><span class='va'>gdp_growth_graph</span> <span class='op'>&lt;-</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>kyrgyz</span>, </span>
 <span>          mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year`</span>, </span>
@@ -1543,12 +1547,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
-<span>       title <span class='op'>=</span> <span class='st'>"Annual GDP Growth in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
+<span>       title <span class='op'>=</span> <span class='st'>"Annual GDP Growth (IV) in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
 <span><span class='va'>gdp_growth_graph</span></span></code></pre>
 </div>
-<img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" />
+<img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" />
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of LDI over time</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of LDI (dependent variable) over time</span></span>
 <span><span class='va'>ldi_graph</span> <span class='op'>&lt;-</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>kyrgyz</span>, </span>
 <span>          mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year`</span>, </span>
@@ -1556,10 +1560,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index Score"</span>, </span>
-<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index Score in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
+<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index Score (DV) in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
 <span><span class='va'>ldi_graph</span></span></code></pre>
 </div>
-<img src="index_files/figure-html5/unnamed-chunk-2-2.png" width="624" />
+<p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
+</div>
+<p><em>Data Sources</em>
+In this project, my key independent variable is contained in <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a> that provides Kyrgyzstan’s annual GDP growth rate for the years 1991-2021. These figures are drawn from the World Bank’s and OECD’s national accounts data.</p>
+<p>My key dependent variable is contained in <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem data</a> that displays Kyrgyzstan’s annual Liberal Democracy Index (LDI) score from 1991-2021. The LDI is measured on a scale from 0 to 1 <em>(1 indicating the maximally democratic index score)</em>, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms.</p>
+<p>For my additional regressions: Firstly, <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;series=SI.POV.GINI&amp;country=KGZ#">World Bank data</a> also provides Kyrgyzstan’s Gini coefficient each year between 1991-2021 as a measure of wealth inequality in the country (wherein a Gini coefficient of 0 would indicate complete equality, and a Gini coefficient of 1 would indicate maximal inequality). Secondly, <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem’s mass mobilization index</a> measures the “mobilization of citizens for mass events such as demonstrations, strikes and sit-ins.” It is measured annually on a scale from 0 to 4, with 0 indicating that effectively no mobilization occurred that year and 4 indicating that myriad demonstrations of varying sizes took place. Finally, the U.S. government also provides <a href="https://foreignassistance.gov/data#tab-data-download">data about yearly U.S. assistance sent to Kyrgyzstan</a> each year between 1991-2021.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Furthermore, the research design of my observational study is cross-sectional, as I am observing my outcome of interest collected at one given point in time.</span></span></code></pre>
+</div>
+</div>
+<p><em>(3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</em></p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Linear regression </span></span>
 <span><span class='va'>regression</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP growth (annual %)`</span>, </span>
@@ -1609,41 +1625,26 @@ F-statistic: 0.3015 on 1 and 29 DF,  p-value: 0.5872</code></pre>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"steelblue1"</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index"</span>, </span>
-<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index vs. Annual GDP Growth in Kyrgyzstan,</span></span>
-<span><span class='st'>       1991-2021"</span> <span class='op'>)</span> <span class='op'>+</span></span>
-<span><span class='co'>#geom vline, hline</span></span>
+<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index vs. Annual GDP Growth in</span></span>
+<span><span class='st'>       Kyrgyzstan, 1991-2021"</span> <span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, </span>
 <span>              se <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
 <span>              color <span class='op'>=</span> <span class='st'>"indianred1"</span>, </span>
 <span>              size <span class='op'>=</span> <span class='fl'>1.5</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-2-3.png" width="624" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
-<ol type="1">
-<li><p>An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</p></li>
-<li><p>A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</p></li>
-</ol>
+<p><em>Interpretation of Regression with LDI and GDP</em>
+Intercept 0.2240133: If GDP grows by 0 percentage points for a given year, the predicted LDI is 0.2240133.
+Coefficient 0.0009581: A GDP growth increase by 1 percentage point in a given year is, on average, associated with an LDI increase by 0.0009581 points.</p>
+<p><em>Statistical significance</em>
+The p-value is 0.587. Given a test value of 0.05, we would fail to reject the null hypothesis that the association between GDP growth and liberal democracy could, in reality, be 0 (and that this small positive association we observe is due to random chance). In other words, the positive association association we observe between GDP growth and liberal democracy is not statistically significant; it is not large enough for us to reject the null hypothesis.</p>
+<p>Here, we should be more worried about a type II error, which is less serious because we may simply have retained a null hypothesis that could be false.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#not causal; association. observing relationship</span></span></code></pre>
-</div>
-</div>
-<ol start="3" type="1">
-<li>A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#LDI and GDP alone</span></span>
-<span><span class='co'>#if LDI 0, gdp would be.</span></span>
-<span><span class='co'>#if GDP growth 1 pp increase, LDI </span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Run regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). </span></span>
 <span><span class='co'>#On average, LDI increases by x if GDP growth rate increases by 1 percentage point [contingent on holding [[other variable]]] fixed</span></span>
-<span></span>
-<span><span class='co'>#statistically significant.</span></span>
-<span></span>
-<span><span class='co'>#Regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). </span></span>
-<span><span class='co'>#interpretations of coefficient</span></span>
-<span><span class='co'>#does association go away?</span></span>
-<span><span class='co'>#is it still significant?</span></span>
+<span><span class='co'>#does association go away? is it still significant?</span></span>
 <span>  </span>
 <span><span class='co'>#run a separate regression with revolution</span></span></code></pre>
 </div>

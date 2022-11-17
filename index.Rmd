@@ -7,13 +7,6 @@ output:
     self_contained: false
 ---
 
-
-
-## Project thoughts
-
-Does GDP growth facilitate democratization?  In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to [World Bank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG). My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing [Kyrgyzstan’s annual Liberal Democracy Index (LDI)](https://www.v-dem.net/data_analysis/CountryGraph/). The LDI is measured one a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.
-
-
 ```{r}
 library(tidyverse)
 library(broom)
@@ -27,8 +20,16 @@ ldi <- read_csv("Kyrgyzstan.csv")
 gdp_growth <- read_csv("wbdatacleaned.csv")
 kyrgyz <- ldi |>
  left_join(gdp_growth)
+```
 
-#Visualization of GDP growth over time
+*(1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting*
+ 
+ Does GDP growth facilitate democratization?  In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to [World Bank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG). My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing [Kyrgyzstan’s annual Liberal Democracy Index (LDI)](https://www.v-dem.net/data_analysis/CountryGraph/). The LDI is measured on a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.
+ 
+*(2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).*
+ 
+```{r}
+#Visualization of GDP growth (independent variable) over time
 gdp_growth_graph <- 
   ggplot(data = kyrgyz, 
           mapping = aes(x = `Year`, 
@@ -36,10 +37,10 @@ gdp_growth_graph <-
   geom_line() +
   labs(x = "Year", 
        y = "GDP growth (Annual %)", 
-       title = "Annual GDP Growth in Kyrgyzstan, 1991-2021")
+       title = "Annual GDP Growth (IV) in Kyrgyzstan, 1991-2021")
 gdp_growth_graph
 
-#Visualization of LDI over time
+#Visualization of LDI (dependent variable) over time
 ldi_graph <- 
   ggplot(data = kyrgyz, 
           mapping = aes(x = `Year`, 
@@ -47,9 +48,25 @@ ldi_graph <-
   geom_line() +
   labs(x = "Year", 
        y = "Liberal Democracy Index Score", 
-       title = "Liberal Democracy Index Score in Kyrgyzstan, 1991-2021")
+       title = "Liberal Democracy Index Score (DV) in Kyrgyzstan, 1991-2021")
 ldi_graph
 
+```
+ 
+*Data Sources*
+In this project, my key independent variable is contained in [World Bank data](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG) that provides Kyrgyzstan's annual GDP growth rate for the years 1991-2021. These figures are drawn from the World Bank's and OECD's national accounts data.
+
+My key dependent variable is contained in [VDem data](https://www.v-dem.net/data_analysis/CountryGraph/) that displays Kyrgyzstan’s annual Liberal Democracy Index (LDI) score from 1991-2021. The LDI is measured on a scale from 0 to 1 *(1 indicating the maximally democratic index score)*, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. 
+
+For my additional regressions: Firstly, [World Bank data](https://databank.worldbank.org/reports.aspx?source=2&series=SI.POV.GINI&country=KGZ#) also provides Kyrgyzstan's Gini coefficient each year between 1991-2021 as a measure of wealth inequality in the country (wherein a Gini coefficient of 0 would indicate complete equality, and a Gini coefficient of 1 would indicate maximal inequality). Secondly, [VDem's mass mobilization index](https://www.v-dem.net/data_analysis/CountryGraph/) measures the "mobilization of citizens for mass events such as demonstrations, strikes and sit-ins." It is measured annually on a scale from 0 to 4, with 0 indicating that effectively no mobilization occurred that year and 4 indicating that myriad demonstrations of varying sizes took place. Finally, the U.S. government also provides [data about yearly U.S. assistance sent to Kyrgyzstan](https://foreignassistance.gov/data#tab-data-download) each year between 1991-2021.
+
+```{r}
+#Furthermore, the research design of my observational study is cross-sectional, as I am observing my outcome of interest collected at one given point in time.
+```
+
+*(3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.*
+ 
+```{r}
 #Linear regression 
 regression <- lm(`Liberal Democracy Index` ~ `GDP growth (annual %)`, 
                  data = kyrgyz)
@@ -65,41 +82,29 @@ ggplot(regression, aes(x = `GDP growth (annual %)`,
   geom_point(color = "steelblue1") + 
   labs(x = "GDP growth (Annual %)", 
        y = "Liberal Democracy Index", 
-       title = "Liberal Democracy Index vs. Annual GDP Growth in Kyrgyzstan,
-       1991-2021" ) +
-#geom vline, hline
+       title = "Liberal Democracy Index vs. Annual GDP Growth in
+       Kyrgyzstan, 1991-2021" ) +
   geom_smooth(method = "lm", 
               se = FALSE, 
               color = "indianred1", 
               size = 1.5)
 ```
+ *Interpretation of Regression with LDI and GDP*
+Intercept 0.2240133: If GDP grows by 0 percentage points for a given year, the predicted LDI is 0.2240133.
+Coefficient 0.0009581: A GDP growth increase by 1 percentage point in a given year is, on average, associated with an LDI increase by 0.0009581 points. 
 
- (1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting
- 
- (2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).
- 
-```{r}
-#not causal; association. observing relationship
-```
- 
- (3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect. 
- 
+*Statistical significance*
+The p-value is 0.587. Given a test value of 0.05, we would fail to reject the null hypothesis that the association between GDP growth and liberal democracy could, in reality, be 0 (and that this small positive association we observe is due to random chance). In other words, the positive association association we observe between GDP growth and liberal democracy is not statistically significant; it is not large enough for us to reject the null hypothesis. 
+
+Here, we should be more worried about a type II error, which is less serious because we may simply have retained a null hypothesis that could be false.
+
 ```{r}
 
-#LDI and GDP alone
-#if LDI 0, gdp would be.
-#if GDP growth 1 pp increase, LDI 
+#Run regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). 
 #On average, LDI increases by x if GDP growth rate increases by 1 percentage point [contingent on holding [[other variable]]] fixed
-
-#statistically significant.
-
-#Regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). 
-#interpretations of coefficient
-#does association go away?
-#is it still significant?
+#does association go away? is it still significant?
   
 #run a separate regression with revolution
-
 ```
  
  (4) A brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).
