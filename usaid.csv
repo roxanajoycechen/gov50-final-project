@@ -1,0 +1,98 @@
+Year,Income Group Acronym,Income Group Name,Transaction Type ID,Transaction Type Name,current_amount,constant_amount
+1992,LMIC,Lower Middle Income Country,2,Obligations,10000000,16917611
+1993,LMIC,Lower Middle Income Country,2,Obligations,73678806,121783151
+1994,LMIC,Lower Middle Income Country,2,Obligations,68274519,110440826
+1995,LMIC,Lower Middle Income Country,2,Obligations,50684810,80273692
+1996,LMIC,Lower Middle Income Country,2,Obligations,40405542,62819561
+1997,LMIC,Lower Middle Income Country,2,Obligations,24326359,37162172
+1998,LMIC,Lower Middle Income Country,2,Obligations,38472245,58045031
+1999,LMIC,Lower Middle Income Country,2,Obligations,52979800,78921198
+2000,LMIC,Lower Middle Income Country,2,Obligations,47291627,69028795
+2001,LMIC,Lower Middle Income Country,2,Obligations,35403803,50483108
+2001,LMIC,Lower Middle Income Country,3,Disbursements,33444008,47688592
+2002,LMIC,Lower Middle Income Country,2,Obligations,63194972,88694708
+2002,LMIC,Lower Middle Income Country,3,Disbursements,55927658,78494949
+2003,LMIC,Lower Middle Income Country,2,Obligations,59985200,82681181
+2003,LMIC,Lower Middle Income Country,3,Disbursements,42673945,58820049
+2004,LMIC,Lower Middle Income Country,2,Obligations,44283606,59609099
+2004,LMIC,Lower Middle Income Country,3,Disbursements,47632070,64116383
+2005,LMIC,Lower Middle Income Country,2,Obligations,51333426,67049937
+2005,LMIC,Lower Middle Income Country,3,Disbursements,46748108,61060755
+2006,LMIC,Lower Middle Income Country,1,Appropriated and Planned,34714000,43403350
+2006,LMIC,Lower Middle Income Country,2,Obligations,45066272,57038699
+2006,LMIC,Lower Middle Income Country,3,Disbursements,57806132,73163060
+2007,LMIC,Lower Middle Income Country,1,Appropriated and Planned,34262000,41701559
+2007,LMIC,Lower Middle Income Country,2,Obligations,51940251,63997359
+2007,LMIC,Lower Middle Income Country,3,Disbursements,46853086,57729274
+2008,LMIC,Lower Middle Income Country,1,Appropriated and Planned,29964000,35730982
+2008,LMIC,Lower Middle Income Country,2,Obligations,71313653,86086019
+2008,LMIC,Lower Middle Income Country,3,Disbursements,67496583,81478233
+2008,LMIC,Lower Middle Income Country,18,President's Budget Requests,29515000,35195565
+2008,LMIC,Lower Middle Income Country,19,Initial Allocations,30114000,35909851
+2009,LMIC,Lower Middle Income Country,1,Appropriated and Planned,58932000,69470708
+2009,LMIC,Lower Middle Income Country,2,Obligations,59259447,70723762
+2009,LMIC,Lower Middle Income Country,3,Disbursements,57094319,68139742
+2009,LMIC,Lower Middle Income Country,18,President's Budget Requests,27565000,32494400
+2009,LMIC,Lower Middle Income Country,19,Initial Allocations,29060000,34256750
+2010,LMIC,Lower Middle Income Country,1,Appropriated and Planned,53608000,62655447
+2010,LMIC,Lower Middle Income Country,2,Obligations,128227125,151730115
+2010,LMIC,Lower Middle Income Country,3,Disbursements,59724601,70671617
+2010,LMIC,Lower Middle Income Country,18,President's Budget Requests,48230000,56369801
+2010,LMIC,Lower Middle Income Country,19,Initial Allocations,53765000,62838944
+2011,LMIC,Lower Middle Income Country,1,Appropriated and Planned,40764000,46710209
+2011,LMIC,Lower Middle Income Country,2,Obligations,72286796,83859389
+2011,LMIC,Lower Middle Income Country,3,Disbursements,98874962,114704137
+2011,LMIC,Lower Middle Income Country,18,President's Budget Requests,46925000,53769909
+2011,LMIC,Lower Middle Income Country,19,Initial Allocations,41444000,47489399
+2012,LMIC,Lower Middle Income Country,1,Appropriated and Planned,47399000,53305218
+2012,LMIC,Lower Middle Income Country,2,Obligations,106140438,120847580
+2012,LMIC,Lower Middle Income Country,3,Disbursements,79793649,90850116
+2012,LMIC,Lower Middle Income Country,18,President's Budget Requests,46625000,52434771
+2012,LMIC,Lower Middle Income Country,19,Initial Allocations,47750000,53699954
+2013,LMIC,Lower Middle Income Country,1,Appropriated and Planned,49137000,54259054
+2013,LMIC,Lower Middle Income Country,2,Obligations,53510725,59821935
+2013,LMIC,Lower Middle Income Country,3,Disbursements,79180434,88519203
+2013,LMIC,Lower Middle Income Country,18,President's Budget Requests,46725000,51595624
+2013,LMIC,Lower Middle Income Country,19,Initial Allocations,49137000,54259054
+2014,LMIC,Lower Middle Income Country,1,Appropriated and Planned,42153729,45670344
+2014,LMIC,Lower Middle Income Country,2,Obligations,75366521,82665913
+2014,LMIC,Lower Middle Income Country,3,Disbursements,66546815,72991998
+2014,LMIC,Lower Middle Income Country,18,President's Budget Requests,51819000,56141930
+2014,LMIC,Lower Middle Income Country,19,Initial Allocations,46537000,50419284
+2015,LMIC,Lower Middle Income Country,1,Appropriated and Planned,39120000,41897826
+2015,LMIC,Lower Middle Income Country,2,Obligations,61415647,66618559
+2015,LMIC,Lower Middle Income Country,3,Disbursements,60214785,65315968
+2015,LMIC,Lower Middle Income Country,18,President's Budget Requests,41700000,44661027
+2015,LMIC,Lower Middle Income Country,19,Initial Allocations,37308000,39957159
+2016,LMIC,Lower Middle Income Country,1,Appropriated and Planned,46378000,49238774
+2016,LMIC,Lower Middle Income Country,2,Obligations,41251552,44351736
+2016,LMIC,Lower Middle Income Country,3,Disbursements,59392175,63855688
+2016,LMIC,Lower Middle Income Country,18,President's Budget Requests,50391000,53499309
+2016,LMIC,Lower Middle Income Country,19,Initial Allocations,46830000,49718655
+2017,LMIC,Lower Middle Income Country,1,Appropriated and Planned,46605000,48612706
+2017,LMIC,Lower Middle Income Country,2,Obligations,61658289,65136581
+2017,LMIC,Lower Middle Income Country,3,Disbursements,52185344,55129221
+2017,LMIC,Lower Middle Income Country,18,President's Budget Requests,51756000,53985607
+2017,LMIC,Lower Middle Income Country,19,Initial Allocations,46660000,48670075
+2018,LMIC,Lower Middle Income Country,1,Appropriated and Planned,35123000,35803260
+2018,LMIC,Lower Middle Income Country,2,Obligations,62936189,64983158
+2018,LMIC,Lower Middle Income Country,3,Disbursements,51750074,53433224
+2018,LMIC,Lower Middle Income Country,18,President's Budget Requests,17470000,17808361
+2018,LMIC,Lower Middle Income Country,19,Initial Allocations,35100000,35779815
+2019,LMIC,Lower Middle Income Country,1,Appropriated and Planned,36984000,36984000
+2019,LMIC,Lower Middle Income Country,2,Obligations,43095136,43636227
+2019,LMIC,Lower Middle Income Country,3,Disbursements,44079630,44633095
+2019,LMIC,Lower Middle Income Country,18,President's Budget Requests,10470000,10470000
+2019,LMIC,Lower Middle Income Country,19,Initial Allocations,36984000,36984000
+2020,LMIC,Lower Middle Income Country,1,Appropriated and Planned,31150000,30548199
+2020,LMIC,Lower Middle Income Country,2,Obligations,45852181,45852181
+2020,LMIC,Lower Middle Income Country,3,Disbursements,43349067,43349067
+2020,LMIC,Lower Middle Income Country,18,President's Budget Requests,8600000,8433851
+2021,LMIC,Lower Middle Income Country,1,Appropriated and Planned,30835000,29646187
+2021,LMIC,Lower Middle Income Country,2,Obligations,43547389,42819455
+2021,LMIC,Lower Middle Income Country,3,Disbursements,44140444,43402584
+2021,LMIC,Lower Middle Income Country,18,President's Budget Requests,20000000,19228919
+2022,LMIC,Lower Middle Income Country,2,Obligations,36498097,35240022
+2022,LMIC,Lower Middle Income Country,3,Disbursements,44146595,42624887
+2022,LMIC,Lower Middle Income Country,18,President's Budget Requests,31400000,29594722
+2023,LMIC,Lower Middle Income Country,18,President's Budget Requests,35400000,32708123

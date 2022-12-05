@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-1-2.png","index_files/figure-html5/unnamed-chunk-1-3.png","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-2-2.png","index_files/figure-html5/unnamed-chunk-2-3.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-3-2.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","Kyrgyzstan.csv","wbdatacleaned.csv"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-1-2.png","index_files/figure-html5/unnamed-chunk-1-3.png","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-2-2.png","index_files/figure-html5/unnamed-chunk-2-3.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-3-2.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/figure-html5/unnamed-chunk-8-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/kePrint-0.0.1/kePrint.js","index_files/lightable-0.0.1/lightable.css","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","kyrgyz_gini.csv","Kyrgyzstan.csv","massmobilization.csv","usaid.csv","wbdatacleaned.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.16/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1522,31 +1524,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelr.tidyverse.org'>modelr</a></span><span class='op'>)</span></span></code></pre>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelr.tidyverse.org'>modelr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://vincentarelbundock.github.io/modelsummary/'>modelsummary</a></span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Loading and joining data</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Loading and Joining Data</span></span>
 <span><span class='va'>ldi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Kyrgyzstan.csv"</span><span class='op'>)</span></span>
 <span><span class='va'>gdp_growth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"wbdatacleaned.csv"</span><span class='op'>)</span></span>
+<span></span>
 <span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>ldi</span> <span class='op'>|&gt;</span></span>
-<span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span></span></code></pre>
+<span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gdp_growth</span><span class='op'>)</span></span>
+<span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>kyrgyz</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>`GDP Growth (Annual %)` <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p><em>(1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</em></p>
+<p><strong>(1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</strong></p>
 <p>Does GDP growth facilitate democratization? In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a>. My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing <a href="https://www.v-dem.net/data_analysis/CountryGraph/">Kyrgyzstan’s annual Liberal Democracy Index (LDI)</a>. The LDI is measured on a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.</p>
-<p><em>(2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</em></p>
+<p><strong>(2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of GDP growth (independent variable) over time</span></span>
 <span><span class='va'>gdp_growth_graph</span> <span class='op'>&lt;-</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>kyrgyz</span>, </span>
 <span>          mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year`</span>, </span>
-<span>                        y <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>                        y <span class='op'>=</span> <span class='va'>`GDP Growth (Annual %)`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, </span>
-<span>       y <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"GDP Growth (Annual %)"</span>, </span>
 <span>       title <span class='op'>=</span> <span class='st'>"Annual GDP Growth (IV) in Kyrgyzstan, 1991-2021"</span><span class='op'>)</span></span>
 <span><span class='va'>gdp_growth_graph</span></span></code></pre>
 </div>
@@ -1565,37 +1571,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
 </div>
-<p><em>Data Sources</em>
-In this project, my key independent variable is contained in <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a> that provides Kyrgyzstan’s annual GDP growth rate for the years 1991-2021. These figures are drawn from the World Bank’s and OECD’s national accounts data.</p>
-<p>My key dependent variable is contained in <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem data</a> that displays Kyrgyzstan’s annual Liberal Democracy Index (LDI) score from 1991-2021. The LDI is measured on a scale from 0 to 1 <em>(1 indicating the maximally democratic index score)</em>, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms.</p>
-<p>For my additional regressions: Firstly, <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;series=SI.POV.GINI&amp;country=KGZ#">World Bank data</a> also provides Kyrgyzstan’s Gini coefficient each year between 1991-2021 as a measure of wealth inequality in the country (wherein a Gini coefficient of 0 would indicate complete equality, and a Gini coefficient of 1 would indicate maximal inequality). Secondly, <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem’s mass mobilization index</a> measures the “mobilization of citizens for mass events such as demonstrations, strikes and sit-ins.” It is measured annually on a scale from 0 to 4, with 0 indicating that effectively no mobilization occurred that year and 4 indicating that myriad demonstrations of varying sizes took place. Finally, the U.S. government also provides <a href="https://foreignassistance.gov/data#tab-data-download">data about yearly U.S. assistance sent to Kyrgyzstan</a> each year between 1991-2021.</p>
+<p><strong>Data Sources</strong></p>
+<p>In this project, my key independent variable is contained in <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a> that provides Kyrgyzstan’s annual GDP growth rate for the years 1991-2021. These figures are drawn from the World Bank’s and OECD’s national accounts data.</p>
+<p>My key dependent variable is contained in <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem data</a> that displays Kyrgyzstan’s annual Liberal Democracy Index (LDI) score from 1991-2021. The LDI is measured on a scale from 0 to 1 (1 indicating the maximally democratic index score), and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms.</p>
+<p>For my additional regressions: Firstly, <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;series=SI.POV.GINI&amp;country=KGZ#">World Bank data</a> also provides Kyrgyzstan’s Gini coefficient each year between 1991-2021 as a measure of wealth inequality in the country (wherein a Gini coefficient of 0 would indicate complete income equality, and a Gini coefficient of 1 would indicate maximal income inequality). Secondly, <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem’s mass mobilization index</a> measures the “mobilization of citizens for mass events such as demonstrations, strikes and sit-ins.” It is measured annually on a scale from 0 to 4, with 0 indicating that effectively no mobilization occurred that year and 4 indicating that myriad demonstrations of varying sizes took place. Finally, the U.S. government also provides <a href="https://foreignassistance.gov/data#tab-data-download">data about yearly U.S. assistance sent to Kyrgyzstan</a> between 1991-2021. This is measured in inflation-adjusted dollars.</p>
+<p>Furthermore, the research design of my observational study is a panel study, as I am looking at my outcome of interest (Kyrgyzstan’s LDI) at multiple different points over time.</p>
+<p><strong>(3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</strong></p>
+<strong>Regression: LDI vs Annual GDP Growth</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Furthermore, the research design of my observational study is cross-sectional, as I am observing my outcome of interest collected at one given point in time.</span></span></code></pre>
-</div>
-</div>
-<p><em>(3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</em></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Linear regression </span></span>
-<span><span class='va'>regression</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP growth (annual %)`</span>, </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>regression</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP Growth (Annual %)`</span>, </span>
 <span>                 data <span class='op'>=</span> <span class='va'>kyrgyz</span><span class='op'>)</span></span>
 <span><span class='va'>regression</span></span></code></pre>
 </div>
 <pre><code>
 Call:
-lm(formula = `Liberal Democracy Index` ~ `GDP growth (annual %)`, 
+lm(formula = `Liberal Democracy Index` ~ `GDP Growth (Annual %)`, 
     data = kyrgyz)
 
 Coefficients:
-            (Intercept)  `GDP growth (annual %)`  
+            (Intercept)  `GDP Growth (Annual %)`  
               0.2240133                0.0009581  </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>regression</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Coefficients and Intercepts</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>regression</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>
 Call:
-lm(formula = `Liberal Democracy Index` ~ `GDP growth (annual %)`, 
+lm(formula = `Liberal Democracy Index` ~ `GDP Growth (Annual %)`, 
     data = kyrgyz)
 
 Residuals:
@@ -1605,7 +1608,7 @@ Residuals:
 Coefficients:
                          Estimate Std. Error t value Pr(&gt;|t|)    
 (Intercept)             0.2240133  0.0131379  17.051   &lt;2e-16 ***
-`GDP growth (annual %)` 0.0009581  0.0017450   0.549    0.587    
+`GDP Growth (Annual %)` 0.0009581  0.0017450   0.549    0.587    
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
@@ -1613,17 +1616,38 @@ Residual standard error: 0.07181 on 29 degrees of freedom
 Multiple R-squared:  0.01029,   Adjusted R-squared:  -0.02384 
 F-statistic: 0.3015 on 1 and 29 DF,  p-value: 0.5872</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Coefficients</span></span>
-<span><span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coef</a></span><span class='op'>(</span><span class='va'>regression</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>regression</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span>, <span class='va'>p.value</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>            (Intercept) `GDP growth (annual %)` 
-           0.2240133360            0.0009581068 </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.224</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>GDP Growth (Annual %)</code></td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">0.587</td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Graphing regression</span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>regression</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span>, </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Graphing Regression</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>regression</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`GDP Growth (Annual %)`</span>, </span>
 <span>                       y <span class='op'>=</span> <span class='va'>`Liberal Democracy Index`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"steelblue1"</span><span class='op'>)</span> <span class='op'>+</span> </span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"GDP growth (Annual %)"</span>, </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"GDP Growth (Annual %)"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index"</span>, </span>
 <span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index vs. Annual GDP Growth in</span></span>
 <span><span class='st'>       Kyrgyzstan, 1991-2021"</span> <span class='op'>)</span> <span class='op'>+</span></span>
@@ -1632,37 +1656,460 @@ F-statistic: 0.3015 on 1 and 29 DF,  p-value: 0.5872</code></pre>
 <span>              color <span class='op'>=</span> <span class='st'>"indianred1"</span>, </span>
 <span>              size <span class='op'>=</span> <span class='fl'>1.5</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<p><em>Interpretation of Regression with LDI and GDP</em>
-Intercept 0.2240133: If GDP grows by 0 percentage points for a given year, the predicted LDI is 0.2240133.
-Coefficient 0.0009581: A GDP growth increase by 1 percentage point in a given year is, on average, associated with an LDI increase by 0.0009581 points.</p>
-<p><em>Statistical significance</em>
-The p-value is 0.587. Given a test value of 0.05, we would fail to reject the null hypothesis that the association between GDP growth and liberal democracy could, in reality, be 0 (and that this small positive association we observe is due to random chance). In other words, the positive association association we observe between GDP growth and liberal democracy is not statistically significant; it is not large enough for us to reject the null hypothesis.</p>
-<p>Here, we should be more worried about a type II error, which is less serious because we may simply have retained a null hypothesis that could be false.</p>
+<p><strong>Interpretation of Regression with LDI and GDP</strong></p>
+<p>The intercept 0.2240133 indicates that if GDP grows by 0 percentage points for a given year, the predicted LDI is 0.2240133. The coefficient 0.0009581 indicates that an increase in annual GDP growth by 1 percentage point in a given year is, on average, associated with an LDI increase by 0.0009581 points.</p>
+<p><strong>Statistical significance</strong></p>
+<p>The p-value is 0.587 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.587). Given a test value of 0.05, we would fail to reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is not statistically significant.</p>
+<p><strong>Multiple Regression 1: Mass Mobilization, Annual GDP Growth, and LDI</strong></p>
+<p>The following section contains a multiple regression examining the relationship between annual GDP growth and LDI, while controlling for the mass mobilization index (an important possible confounder, since Kyrgyzstan has experienced three coups in its history due to civilian demands for greater democratization). Mass mobilization for democratization could be a potential confounder given that it could positively affect my explanatory variable—GDP growth—by increasing GDP due to greater demands for liberalization; it could also affect my outcome variable—LDI—by leading to greater liberal concessions by governments.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Run regression with important confounders: LDI, GDP, Aid, Revolutions, Inequality (and explain why important). </span></span>
-<span><span class='co'>#On average, LDI increases by x if GDP growth rate increases by 1 percentage point [contingent on holding [[other variable]]] fixed</span></span>
-<span><span class='co'>#does association go away? is it still significant?</span></span>
-<span>  </span>
-<span><span class='co'>#run a separate regression with revolution</span></span></code></pre>
-</div>
-</div>
-<ol start="4" type="1">
-<li>A brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).</li>
-</ol>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Results Summary</span></span>
-<span><span class='co'>#Hypothesis Support</span></span>
-<span><span class='co'>#Limitations and Threats</span></span>
-<span><span class='co'>#Improvements</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Joining &amp; Cleaning New Data</span></span>
+<span><span class='va'>usaid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"usaid.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>massmob</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"massmobilization.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>gini</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"kyrgyz_gini.csv"</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='co'>#is positive assoc, but can it be explained by other things - if put other variables in, does association go away?</span></span></code></pre>
+<span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>kyrgyz</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>usaid</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>massmob</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>gini</span><span class='op'>)</span></span>
+<span><span class='va'>kyrgyz</span></span></code></pre>
+</div>
+<pre><code># A tibble: 94 × 16
+    Year Liberal Dem…¹ Liber…² Liber…³ GDP g…⁴ GDP G…⁵ Incom…⁶ Incom…⁷
+   &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+ 1  1991         0.164   0.135   0.183   -7.94   -7.94 &lt;NA&gt;    &lt;NA&gt;   
+ 2  1992         0.205   0.178   0.234  -13.8   -13.8  LMIC    Lower …
+ 3  1993         0.201   0.169   0.224  -15.5   -15.5  LMIC    Lower …
+ 4  1994         0.192   0.165   0.216  -20.1   -20.1  LMIC    Lower …
+ 5  1995         0.174   0.149   0.198   -5.42   -5.42 LMIC    Lower …
+ 6  1996         0.171   0.144   0.192    7.08    7.08 LMIC    Lower …
+ 7  1997         0.164   0.14    0.185    9.92    9.92 LMIC    Lower …
+ 8  1998         0.17    0.143   0.19     2.12    2.12 LMIC    Lower …
+ 9  1999         0.168   0.144   0.189    3.66    3.66 LMIC    Lower …
+10  2000         0.165   0.144   0.189    5.44    5.44 LMIC    Lower …
+# … with 84 more rows, 8 more variables: `Transaction Type ID` &lt;dbl&gt;,
+#   `Transaction Type Name` &lt;chr&gt;, current_amount &lt;dbl&gt;,
+#   constant_amount &lt;dbl&gt;, `Mass mobilization` &lt;dbl&gt;,
+#   `Mass mobilization  CI (Low)` &lt;dbl&gt;,
+#   `Mass mobilization  CI (High)` &lt;dbl&gt;, `Gini Coefficient` &lt;dbl&gt;,
+#   and abbreviated variable names ¹​`Liberal Democracy Index`,
+#   ²​`Liberal Democracy Index CI (Low)`, …</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>kyrgyz</span> <span class='op'>&lt;-</span> <span class='va'>kyrgyz</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>`US Assistance` <span class='op'>=</span> <span class='va'>`constant_amount`</span>,</span>
+<span>         `Mass Mobilization Index` <span class='op'>=</span> <span class='va'>`Mass mobilization`</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Multiple Regression with Mass Mobilization</span></span>
+<span><span class='va'>kyrgyz</span></span></code></pre>
+</div>
+<pre><code># A tibble: 94 × 18
+    Year Liberal Dem…¹ Liber…² Liber…³ GDP g…⁴ GDP G…⁵ Incom…⁶ Incom…⁷
+   &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+ 1  1991         0.164   0.135   0.183   -7.94   -7.94 &lt;NA&gt;    &lt;NA&gt;   
+ 2  1992         0.205   0.178   0.234  -13.8   -13.8  LMIC    Lower …
+ 3  1993         0.201   0.169   0.224  -15.5   -15.5  LMIC    Lower …
+ 4  1994         0.192   0.165   0.216  -20.1   -20.1  LMIC    Lower …
+ 5  1995         0.174   0.149   0.198   -5.42   -5.42 LMIC    Lower …
+ 6  1996         0.171   0.144   0.192    7.08    7.08 LMIC    Lower …
+ 7  1997         0.164   0.14    0.185    9.92    9.92 LMIC    Lower …
+ 8  1998         0.17    0.143   0.19     2.12    2.12 LMIC    Lower …
+ 9  1999         0.168   0.144   0.189    3.66    3.66 LMIC    Lower …
+10  2000         0.165   0.144   0.189    5.44    5.44 LMIC    Lower …
+# … with 84 more rows, 10 more variables:
+#   `Transaction Type ID` &lt;dbl&gt;, `Transaction Type Name` &lt;chr&gt;,
+#   current_amount &lt;dbl&gt;, constant_amount &lt;dbl&gt;,
+#   `Mass mobilization` &lt;dbl&gt;, `Mass mobilization  CI (Low)` &lt;dbl&gt;,
+#   `Mass mobilization  CI (High)` &lt;dbl&gt;, `Gini Coefficient` &lt;dbl&gt;,
+#   `US Assistance` &lt;dbl&gt;, `Mass Mobilization Index` &lt;dbl&gt;, and
+#   abbreviated variable names ¹​`Liberal Democracy Index`, …</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult_regression</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP Growth (Annual %)`</span> <span class='op'>+</span> <span class='va'>`Mass Mobilization Index`</span>,</span>
+<span>                      data <span class='op'>=</span> <span class='va'>kyrgyz</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>#Coefficients and Intercepts</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>mult_regression</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = `Liberal Democracy Index` ~ `GDP Growth (Annual %)` + 
+    `Mass Mobilization Index`, data = kyrgyz)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.12923 -0.07704  0.01562  0.06177  0.09110 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)               0.172490   0.024416   7.065 3.15e-10 ***
+`GDP Growth (Annual %)`   0.002380   0.001361   1.749 0.083717 .  
+`Mass Mobilization Index` 0.033942   0.009667   3.511 0.000697 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.06896 on 91 degrees of freedom
+Multiple R-squared:  0.1241,    Adjusted R-squared:  0.1049 
+F-statistic: 6.449 on 2 and 91 DF,  p-value: 0.002404</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult_regression</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span>, <span class='va'>p.value</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>digits <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span></code></pre>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.17249</td>
+<td style="text-align: right;">0.00000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>GDP Growth (Annual %)</code></td>
+<td style="text-align: right;">0.00238</td>
+<td style="text-align: right;">0.08372</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Mass Mobilization Index</code></td>
+<td style="text-align: right;">0.03394</td>
+<td style="text-align: right;">0.00070</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Plotting Multiple Regression</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>mult_regression</span>, </span>
+<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`GDP Growth (Annual %)`</span>, </span>
+<span>                     y <span class='op'>=</span> <span class='va'>`Liberal Democracy Index`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>`Mass Mobilization Index`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"GDP Growth (Annual %)"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"Liberal Democracy Index"</span>, </span>
+<span>       title <span class='op'>=</span> <span class='st'>"Liberal Democracy Index vs. Annual GDP Growth in</span></span>
+<span><span class='st'>       Kyrgyzstan, 1991-2021"</span> <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, </span>
+<span>              se <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span>              color <span class='op'>=</span> <span class='st'>"indianred1"</span>, </span>
+<span>              size <span class='op'>=</span> <span class='fl'>1.5</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<p><strong>Interpretation of Regression with Mass Mobilization, LDI and GDP</strong></p>
+<p>The intercept 0.172490 indicates that when annual GDP growth is 0 percent and the mass mobilization index is 0, LDI is <em>on average</em> 0.17249.</p>
+<p>Furthermore, the coefficient 0.002380 indicates that an annual GDP growth increase by 1 percentage point is associated, on average, with an LDI <em>increase</em> of 0.002380, provided that the mass mobilization index is held constant.</p>
+<p>The coefficient 0.033942 demonstrates that an increase by 1 unit of the mass mobilization index (0-1, 1-2, 2-3, 3-4) is associated–on average–with an LDI <em>increase</em> of 0.033942, provided annual GDP growth is held constant.</p>
+<p><strong>Statistical Significance &amp; Analysis</strong></p>
+<p>The p-value of the GDP growth coefficient is 0.083717 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.083717). Given a test value of 0.05, we would reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#wording of null?</span></span></code></pre>
+</div>
+</div>
+<p>The p-value of the mass mobilization index coefficient is 0.000607. Given a test value of 0.05, we would reject the null hypothesis that there is no association between the mass mobilization index and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<p><strong>Multiple Regression 2: GDP Growth, Aid, Mass Mobilization, Inequality (Gini Coefficient), and LDI</strong></p>
+<p>The following section contains a second multiple regression controlling for more possible confounders. Specifically, the regression examines the relationship between GDP growth and LDI while controlling for the mass mobilization index, income inequality (through the Gini Coefficient) , and US foreign assistance.</p>
+<p>Regarding the new variables: here, US assistance is a potential confounder given that it could positively affect my explanatory variable, GDP growth, by providing an extra boost to the Kyrgyz economy; it could also affect my outcome variable—LDI—by leading to greater liberalization in the Kyrgyz economy, if this aid is given conditionally. Similarly, income inequality (measured through the Gini Coefficient) is a potential confounder given that it could negatively affect GDP growth (as greater inequality could slow down economic growth); inequality could also affect my outcome variable—LDI—because a concentrated, wealthy class is a barrier to democratization.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult_regression_2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Liberal Democracy Index`</span> <span class='op'>~</span> <span class='va'>`GDP Growth (Annual %)`</span> <span class='op'>+</span>  <span class='va'>`US Assistance`</span> <span class='op'>+</span> <span class='va'>`Mass Mobilization Index`</span> <span class='op'>+</span> <span class='va'>`Gini Coefficient`</span>, data <span class='op'>=</span> <span class='va'>kyrgyz</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>#Coefficients and Intercepts</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>mult_regression_2</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = `Liberal Democracy Index` ~ `GDP Growth (Annual %)` + 
+    `US Assistance` + `Mass Mobilization Index` + `Gini Coefficient`, 
+    data = kyrgyz)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.095422 -0.036531  0.007503  0.027808  0.109515 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                8.223e-01  6.283e-02  13.087  &lt; 2e-16 ***
+`GDP Growth (Annual %)`    5.931e-03  1.725e-03   3.439 0.000952 ***
+`US Assistance`           -4.890e-10  2.296e-10  -2.129 0.036457 *  
+`Mass Mobilization Index`  4.969e-02  9.955e-03   4.992  3.7e-06 ***
+`Gini Coefficient`        -2.272e-02  2.056e-03 -11.053  &lt; 2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.04516 on 76 degrees of freedom
+  (13 observations deleted due to missingness)
+Multiple R-squared:  0.6414,    Adjusted R-squared:  0.6225 
+F-statistic: 33.98 on 4 and 76 DF,  p-value: 3.026e-16</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult_regression_2</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span>, <span class='va'>p.value</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>digits <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span></code></pre>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.82231</td>
+<td style="text-align: right;">0.00000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>GDP Growth (Annual %)</code></td>
+<td style="text-align: right;">0.00593</td>
+<td style="text-align: right;">0.00095</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>US Assistance</code></td>
+<td style="text-align: right;">0.00000</td>
+<td style="text-align: right;">0.03646</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Mass Mobilization Index</code></td>
+<td style="text-align: right;">0.04969</td>
+<td style="text-align: right;">0.00000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Gini Coefficient</code></td>
+<td style="text-align: right;">-0.02272</td>
+<td style="text-align: right;">0.00000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Interpretation of Regression with GDP Growth, Aid, Mass Mobilization, Inequality (Gini Coefficient), and LDI</strong></p>
+<p>The intercept 0.8223058000 indicates that when annual GDP growth is 0 percent, US assistance is $0, the mass mobilization index is 0, and the Gini Coefficient is 0, LDI is <em>on average</em> 0.822.</p>
+<p>Furthermore, the coefficient 0.0059309811 indicates that an annual GDP growth increase by 1 percentage point is associated, on average, with an LDI <em>increase</em> by 0.0059309811, provided that US assistance, the mass mobilization index, and the Gini Coefficient are held constant.</p>
+<p>The coefficient -0.0000000005 suggests that an increase by 1 dollar in US assistance is associated, on average, with an LDI <em>decrease</em> by 0.0000000005, provided that annual GDP growth, the mass mobilization index, and the Gini Coefficient are held constant. (Put differently, an increase by 100,000 dollars in US assistance is associated–on average–with an LDI <em>decrease</em> by 0.00005, provided that annual GDP growth, the mass mobilization index, and the Gini Coefficient are held constant.)</p>
+<p>The coefficient 0.0496925383 reveals that an increase by 1 unit (0-1, 1-2, 2-3, 3-4) in the mass mobilization index is associated, on average, with an LDI <em>increase</em> by 0.0496925383, provided that annual GDP growth, US assistance, and the Gini coefficient are held constant.</p>
+<p>The coefficient -0.0227235341 demonstrates that an increase by 1 unit (i.e. 0 to 1, or a movement from perfect equality to perfect inequality) on the Gini Coefficient is associated, on average, with an LDI <em>decrease</em> by 0.0227235341, provided that annual GDP growth, US assistance, and mass mobilization are held constant.</p>
+<p><strong>Statistical Significance &amp; Analysis</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#wording of null</span></span></code></pre>
+</div>
+</div>
+<p>The p-value of the GDP growth coefficient (that is, the probability of observing data as or more extreme as our observed coefficient under the null hypothesis) is 0.000952. Given a test value of 0.05, we would reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<p>The p-value of the US Assistance coefficient is 0.036457 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.036457). Given a test value of 0.05, we would reject the null hypothesis that there is no association between US Assistance and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<p>The p-value of the Mass Mobilization Index coefficient is 3.7e-06 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 3.7e-06). Given a test value of 0.05, we would reject the null hypothesis that there is no association between mass mobilization and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<p>The p-value of the Gini Coefficient/income inequality coefficient is 2e-16 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 2e-16). Given a test value of 0.05, we would reject the null hypothesis that there is no association between income inequality and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<p><strong>(4) A brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Linear Regression Result Table</span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>regression</span>, <span class='va'>mult_regression</span>, <span class='va'>mult_regression_2</span><span class='op'>)</span>,</span>
+<span>gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+<th style="text-align:center;">
+Model 2
+</th>
+<th style="text-align:center;">
+Model 3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+0.224
+</td>
+<td style="text-align:center;">
+0.172
+</td>
+<td style="text-align:center;">
+0.822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.013)
+</td>
+<td style="text-align:center;">
+(0.024)
+</td>
+<td style="text-align:center;">
+(0.063)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GDP Growth (Annual %)
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.002
+</td>
+<td style="text-align:center;">
+0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.002)
+</td>
+<td style="text-align:center;">
+(0.001)
+</td>
+<td style="text-align:center;">
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mass Mobilization Index
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+0.034
+</td>
+<td style="text-align:center;">
+0.050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(0.010)
+</td>
+<td style="text-align:center;">
+(0.010)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US Assistance
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+−5e−10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(2e−10)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gini Coefficient
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+−0.023
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+94
+</td>
+<td style="text-align:center;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.010
+</td>
+<td style="text-align:center;">
+0.124
+</td>
+<td style="text-align:center;">
+0.641
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+−0.024
+</td>
+<td style="text-align:center;">
+0.105
+</td>
+<td style="text-align:center;">
+0.622
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Summary of Results &amp; Support for Hypothesis</strong></p>
+<p>Primarily, there is a positive association between GDP growth and LDI across all three regressions. This positive association persists even when I control for possible confounders, suggesting that there is an empirical positive association between GDP growth and LDI. However, the coefficient on my main variable, annual GDP growth, gets progressively larger in my regressions with 2, then 3, then 5 variables—indicating that, in controlling for GDP Growth, US Aid, the Mass Mobilization Index, and the Gini Coefficient (economic inequality), I have controlled for important potential confounders. We cannot reject the null hypothesis (that there is no relationship between GDP and LDI, and that any positive association we do find between them is due to random chance) in the linear regression with GDP and LDI alone. However, we can reject the null hypothesis in the regression with 3 variables (Mass Mobilization Index, LDI and GDP), but not in the linear regression with GDP and LDI alone. We also reject the null hypothesis by a larger margin in the regression with 5 variables (GDP Growth, Aid, Mass Mobilization, Inequality, and LDI) than in the regression with 3 variables.</p>
+<p><strong>Limitations and Threats to Inference</strong></p>
+<p>Evidently, the relationship between GDP growth and LDI is very contingent on the confounders I controlled for; however, there could be other confounders that I have not controlled for or cannot measure—making it hard for me to draw a causal claim. For example: it is possible that domestic policies between Kyrgyz presidents varied, and that one president merely introduced legislation more conducive to liberal democracy than another. This is a potential confounder because it could affect my treatment, GDP growth, because liberal policies also tend to promote economic growth by encouraging the development of free markets and private property; they also facilitate greater levels of liberal democracy by promoting civil freedoms and rights. Secondly, it is also possible that corruption levels varied between Kyrgyz presidents. Corruption is a possible confounder for which I have not controlled, given that corruption can affect my treatment (by slowing down GDP growth by funneling that money into the pockets of elites instead) and my outcome (by decreasing liberal democracy levels, since a corrupt elite tends not to safeguard liberal freedoms because they threaten elite wealth and corporatist networks). Thirdly, international pressures to democratize (for instance, through nudges by the Western world and international institutions like the United Nations) could have been another potential confounder. This is because international pressure could have affected GDP growth by—for example—encouraging Kyrgyzstan to adopt more neoliberal, free-market policies, as well as affected liberal democracy levels in the country by driving leaders to adopt policies protecting citizens’ political and civil freedoms.</p>
+<p><strong>Improvements</strong></p>
+<p>There are also other improvements that could be made to my data. Firstly, it is possible that the data collected for my study could be flawed, especially because a) non-democracies like Kyrgyzstan are often not entirely transparent with their reported data and b) there may not be enough media penetration in an authoritarian state to accurately reflect levels of, for example, mass mobilization. Thus, in an ideal world, I would have access to perfectly accurate data in order to strengthen my analysis. Relatedly, there are improvements that could be made to the way some indices are aggregated to make them more accurate. For example, the LDI could still be modified to be a more thorough reflection of liberal democracy writ large in Kyrgyzstan. The Index is currently an aggregate rating of Kyrgyzstan’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms; however, it might also benefit from accounting for, e.g., the government’s adherence to democratic norms (e.g. adhering to the spirit of the law, refraining from constitutional manipulation for self-benefit).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
