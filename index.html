@@ -1540,9 +1540,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>`GDP Growth (Annual %)` <span class='op'>=</span> <span class='va'>`GDP growth (annual %)`</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p><strong>(1) An introduction where you introduce the research question and hypothesis and briefly describe why it is interesting</strong></p>
+<p><strong>Part 1: Introduction</strong></p>
 <p>Does GDP growth facilitate democratization? In this study, I plan to examine the extent to which GDP growth begets democratic progress. I hypothesize that GDP growth allows democratic progress to occur through factors such as increased governmental capacity, heightened foreign investment, strengthened economic and political institutions, and a more stable middle class. My explanatory variable of interest is the Kyrgyz GDP growth rate from its founding in 1991 to present, according to <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=KG">World Bank data</a>. My outcome variable is the state of liberal democracy in Kyrgyzstan in each associated year, given by VDem data capturing <a href="https://www.v-dem.net/data_analysis/CountryGraph/">Kyrgyzstan’s annual Liberal Democracy Index (LDI)</a>. The LDI is measured on a scale from 0 to 1, and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms. If I observe greater scores on the LDI in periods of Kyrgyz economic growth, this would support my hypothesis that GDP growth is positively associated with democratic hprogress; on the other hand, if LDI scores were to drop during periods of economic growth, this evidence would contradict my hypothesis. When I ultimately run my regression, I would need a positive, statistically significant coefficient to corroborate my hypothesis.</p>
-<p><strong>(2) A data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences).</strong></p>
+<div style="page-break-after: always;"></div>
+<p><strong>Part 2: Data</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Visualization of GDP growth (independent variable) over time</span></span>
@@ -1576,7 +1577,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>My key dependent variable is contained in <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem data</a> that displays Kyrgyzstan’s annual Liberal Democracy Index (LDI) score from 1991-2021. The LDI is measured on a scale from 0 to 1 (1 indicating the maximally democratic index score), and is an aggregate rating of a country’s electoral democracy levels, civil liberty protections, degrees of legal and judicial independence, and governance accountability mechanisms.</p>
 <p>For my additional regressions: Firstly, <a href="https://databank.worldbank.org/reports.aspx?source=2&amp;series=SI.POV.GINI&amp;country=KGZ#">World Bank data</a> also provides Kyrgyzstan’s Gini coefficient each year between 1991-2021 as a measure of wealth inequality in the country (wherein a Gini coefficient of 0 would indicate complete income equality, and a Gini coefficient of 1 would indicate maximal income inequality). Secondly, <a href="https://www.v-dem.net/data_analysis/CountryGraph/">VDem’s mass mobilization index</a> measures the “mobilization of citizens for mass events such as demonstrations, strikes and sit-ins.” It is measured annually on a scale from 0 to 4, with 0 indicating that effectively no mobilization occurred that year and 4 indicating that myriad demonstrations of varying sizes took place. Finally, the U.S. government also provides <a href="https://foreignassistance.gov/data#tab-data-download">data about yearly U.S. assistance sent to Kyrgyzstan</a> between 1991-2021. This is measured in inflation-adjusted dollars.</p>
 <p>Furthermore, the research design of my observational study is a panel study, as I am looking at my outcome of interest (Kyrgyzstan’s LDI) at multiple different points over time.</p>
-<p><strong>(3) A results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect.</strong></p>
+<div style="page-break-after: always;"></div>
+<p><strong>Part 3: Results</strong></p>
 <strong>Regression: LDI vs Annual GDP Growth</strong>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1660,8 +1662,9 @@ F-statistic: 0.3015 on 1 and 29 DF,  p-value: 0.5872</code></pre>
 </div>
 <p><strong>Interpretation of Regression with LDI and GDP</strong></p>
 <p>The intercept 0.2240133 indicates that if GDP grows by 0 percentage points for a given year, the predicted LDI is 0.2240133. The coefficient 0.0009581 indicates that an increase in annual GDP growth by 1 percentage point in a given year is, on average, associated with an LDI increase by 0.0009581 points.</p>
-<p><strong>Statistical significance</strong></p>
+<p><strong>Statistical Significance</strong></p>
 <p>The p-value is 0.587 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.587). Given a test value of 0.05, we would fail to reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is not statistically significant.</p>
+<div style="page-break-after: always;"></div>
 <p><strong>Multiple Regression 1: Mass Mobilization, Annual GDP Growth, and LDI</strong></p>
 <p>The following section contains a multiple regression examining the relationship between annual GDP growth and LDI, while controlling for the mass mobilization index (an important possible confounder, since Kyrgyzstan has experienced three coups in its history due to civilian demands for greater democratization). Mass mobilization for democratization could be a potential confounder given that it could positively affect my explanatory variable—GDP growth—by increasing GDP due to greater demands for liberalization; it could also affect my outcome variable—LDI—by leading to greater liberal concessions by governments.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1810,12 +1813,8 @@ F-statistic: 6.449 on 2 and 91 DF,  p-value: 0.002404</code></pre>
 <p>The coefficient 0.033942 demonstrates that an increase by 1 unit of the mass mobilization index (0-1, 1-2, 2-3, 3-4) is associated–on average–with an LDI <em>increase</em> of 0.033942, provided annual GDP growth is held constant.</p>
 <p><strong>Statistical Significance &amp; Analysis</strong></p>
 <p>The p-value of the GDP growth coefficient is 0.083717 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.083717). Given a test value of 0.05, we would reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is statistically significant.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#wording of null?</span></span></code></pre>
-</div>
-</div>
 <p>The p-value of the mass mobilization index coefficient is 0.000607. Given a test value of 0.05, we would reject the null hypothesis that there is no association between the mass mobilization index and liberal democracy. In other words, the coefficient is statistically significant.</p>
+<div style="page-break-after: always;"></div>
 <p><strong>Multiple Regression 2: GDP Growth, Aid, Mass Mobilization, Inequality (Gini Coefficient), and LDI</strong></p>
 <p>The following section contains a second multiple regression controlling for more possible confounders. Specifically, the regression examines the relationship between GDP growth and LDI while controlling for the mass mobilization index, income inequality (through the Gini Coefficient) , and US foreign assistance.</p>
 <p>Regarding the new variables: here, US assistance is a potential confounder given that it could positively affect my explanatory variable, GDP growth, by providing an extra boost to the Kyrgyz economy; it could also affect my outcome variable—LDI—by leading to greater liberalization in the Kyrgyz economy, if this aid is given conditionally. Similarly, income inequality (measured through the Gini Coefficient) is a potential confounder given that it could negatively affect GDP growth (as greater inequality could slow down economic growth); inequality could also affect my outcome variable—LDI—because a concentrated, wealthy class is a barrier to democratization.</p>
@@ -1900,16 +1899,14 @@ F-statistic: 33.98 on 4 and 76 DF,  p-value: 3.026e-16</code></pre>
 <p>The coefficient 0.0496925383 reveals that an increase by 1 unit (0-1, 1-2, 2-3, 3-4) in the mass mobilization index is associated, on average, with an LDI <em>increase</em> by 0.0496925383, provided that annual GDP growth, US assistance, and the Gini coefficient are held constant.</p>
 <p>The coefficient -0.0227235341 demonstrates that an increase by 1 unit (i.e. 0 to 1, or a movement from perfect equality to perfect inequality) on the Gini Coefficient is associated, on average, with an LDI <em>decrease</em> by 0.0227235341, provided that annual GDP growth, US assistance, and mass mobilization are held constant.</p>
 <p><strong>Statistical Significance &amp; Analysis</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#wording of null</span></span></code></pre>
-</div>
-</div>
 <p>The p-value of the GDP growth coefficient (that is, the probability of observing data as or more extreme as our observed coefficient under the null hypothesis) is 0.000952. Given a test value of 0.05, we would reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is statistically significant.</p>
 <p>The p-value of the US Assistance coefficient is 0.036457 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 0.036457). Given a test value of 0.05, we would reject the null hypothesis that there is no association between US Assistance and liberal democracy. In other words, the coefficient is statistically significant.</p>
 <p>The p-value of the Mass Mobilization Index coefficient is 3.7e-06 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 3.7e-06). Given a test value of 0.05, we would reject the null hypothesis that there is no association between mass mobilization and liberal democracy. In other words, the coefficient is statistically significant.</p>
 <p>The p-value of the Gini Coefficient/income inequality coefficient is 2e-16 (that is, the probability of observing data as or more extreme as our data under the null hypothesis is 2e-16). Given a test value of 0.05, we would reject the null hypothesis that there is no association between income inequality and liberal democracy. In other words, the coefficient is statistically significant.</p>
-<p><strong>(4) A brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).</strong></p>
+<p><strong>Causality Discussion</strong></p>
+<p>The coefficient on my main variable, annual GDP growth, gets progressively larger in my regressions with 2, then 3, then 5 variables—indicating that, in controlling for GDP Growth, US Aid, the Mass Mobilization Index, and the Gini Coefficient (economic inequality), I have controlled for important potential confounders. Thus, the relationship between GDP growth and LDI is contingent on the confounders I controlled for; however, there could be other confounders that I have not controlled for or cannot measure. This renders it difficult for me to draw a causal claim.</p>
+<div style="page-break-after: always;"></div>
+<p><strong>Part 4: Conclusion</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#Linear Regression Result Table</span></span>
