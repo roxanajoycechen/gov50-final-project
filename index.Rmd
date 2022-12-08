@@ -171,7 +171,7 @@ The coefficient 0.033942 demonstrates that an increase by 1 unit of the mass mob
 
 **Statistical Significance & Analysis**
 
-The p-value of the GDP growth coefficient is 0.083717 (that is, the  probability of observing data as or more extreme as our data under the null hypothesis is 0.083717). Given a test value of 0.05, we would reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is statistically significant.
+The p-value of the GDP growth coefficient is 0.083717 (that is, the  probability of observing data as or more extreme as our data under the null hypothesis is 0.083717). Given a test value of 0.05, we would fail to reject the null hypothesis that there is no association between GDP growth and liberal democracy. In other words, the coefficient is not statistically significant.
 
 The p-value of the mass mobilization index coefficient is 0.000607. Given a test value of 0.05, we would reject the null hypothesis that there is no association between the mass mobilization index and liberal democracy. In other words, the coefficient is statistically significant.
 
@@ -231,7 +231,7 @@ gof_map = c("nobs", "r.squared", "adj.r.squared"))
 
 **Summary of Results & Support for Hypothesis**
  
-Primarily, there is a positive association between GDP growth and LDI across all three regressions. This positive association persists even when I control for possible confounders, suggesting that there is an empirical positive association between GDP growth and LDI. However, the coefficient on my main variable, annual GDP growth, gets progressively larger in my regressions with 2, then 3, then 5 variables—indicating that, in controlling for GDP Growth, US Aid, the Mass Mobilization Index, and the Gini Coefficient (economic inequality), I have controlled for important potential confounders. We cannot reject the null hypothesis (that there is no relationship between GDP and LDI, and that any positive association we do find between them is due to random chance) in the linear regression with GDP and LDI alone. However, we can reject the null hypothesis in the regression with 3 variables (Mass Mobilization Index, LDI and GDP), but not in the linear regression with GDP and LDI alone. We also reject the null hypothesis by a larger margin in the regression with 5 variables (GDP Growth, Aid, Mass Mobilization, Inequality, and LDI) than in the regression with 3 variables.
+Primarily, there is a positive association between GDP growth and LDI across all three regressions. This positive association persists even when I control for possible confounders, suggesting that there is an empirical positive association between GDP growth and LDI. However, the coefficient on my main variable, annual GDP growth, gets progressively larger in my regressions with 2, then 3, then 5 variables—indicating that, in controlling for GDP Growth, US Aid, the Mass Mobilization Index, and the Gini Coefficient (economic inequality), I have controlled for important potential confounders. We cannot reject the null hypothesis (that there is no relationship between GDP and LDI, and that any positive association we do find between them is due to random chance) in the linear regression with GDP and LDI, nor in the regression with 3 variables (Mass Mobilization Index, LDI and GDP). However, we can reject the null hypothesis in the regression with 5 variables (GDP Growth, Aid, Mass Mobilization, Inequality, and LDI).
 
 **Limitations and Threats to Inference**
 
